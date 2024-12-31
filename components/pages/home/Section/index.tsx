@@ -44,7 +44,7 @@ function SectionHomePage() {
         <div>
           <Image
             className="absolute h-auto cursor-pointer rounded-lg opacity-80 shadow-lg  transition-all duration-300 hover:grayscale-0"
-            src="/assets/main-home.jpg"
+            src="/assets/images/main-home.jpg"
             width={1000}
             height={500}
             alt="quindart-main-home"
