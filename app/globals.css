@@ -27,7 +27,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 224 71.4% 4.1%;
@@ -53,7 +53,7 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 @layer base {
@@ -63,4 +63,27 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+/* Toàn bộ thanh cuộn */
+::-webkit-scrollbar {
+  width: 10px; /* Độ rộng của scrollbar */
+  height: 10px; /* Chiều cao của scrollbar ngang */
+}
+
+/* Phần track (nền của scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Màu nền thanh cuộn */
+  border-radius: 5px; /* Bo tròn góc */
+}
+
+/* Phần thumb (tay cầm của scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #0C0D0E; /* Màu của tay cầm */
+  border-radius: 4px; /* Bo tròn góc */
+  border: 1px solid #525151FF; /* Tạo khoảng cách giữa thumb và track */
+}
+
+/* Khi hover vào tay cầm */
+::-webkit-scrollbar-thumb:hover {
+  background: #6d6d6d; /* Màu tối hơn khi hover */
 }
