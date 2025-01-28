@@ -1,15 +1,15 @@
-'use client'
+"use client";
 import Image from "next/image";
 import React from "react";
 type CardBlogProps = {
-  img:string,
-  title:string,
-  desc:string
-}
-function CardBlog({img, title, desc}:CardBlogProps) {
+  img: string;
+  title: string;
+  desc: string;
+};
+function CardBlog({ img, title, desc }: CardBlogProps) {
   return (
     <a
-      href="#"
+      href="/blog/1"
       className="mb-4 flex flex-col items-center rounded-lg border border-gray-200 bg-white  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700  md:flex-row"
     >
       <Image
