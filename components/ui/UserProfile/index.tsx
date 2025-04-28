@@ -54,7 +54,7 @@ const UserProfile = () => {
           </div>
           <div>
             <a
-              href="/pdf/CV-LeMinhQuang-Software-Internship.pdf"
+              href="/pdf/LeMinhQuang_FullStackDeveloper_CV.pdf"
               className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
               target="blank"
             >

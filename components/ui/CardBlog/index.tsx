@@ -5,11 +5,12 @@ type CardBlogProps = {
   img: string;
   title: string;
   desc: string;
+  slug: string;
 };
-function CardBlog({ img, title, desc }: CardBlogProps) {
+function CardBlog({ img, title, desc, slug }: CardBlogProps) {
   return (
     <a
-      href="/blog/1"
+      href={`/blog/${slug}`}
       className="mb-4 flex flex-col items-center rounded-lg border border-gray-200 bg-white  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700  md:flex-row"
     >
       <Image
