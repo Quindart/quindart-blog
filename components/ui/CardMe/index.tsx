@@ -26,23 +26,23 @@ export function CardMe() {
           className="mb-3 rounded-full"
         />
         <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
-          Lê Minh Quang
+          Le Minh Quang
         </h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">
           Software Developer
         </span>
         <div className="mt-4 flex space-x-3 lg:mt-6">
           <a
-            href="#"
+            href="/resume"
             className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
           >
-            Xem thêm
+            See more
           </a>
           <a
-            href="#"
+            href="/resume"
             className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
           >
-            Liên hệ
+            Contact me
           </a>
         </div>
       </div>

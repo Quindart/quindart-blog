@@ -1,9 +1,8 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Image from "next/image";
 import {
-  FaFacebook,
-  FaInstagram,
+  FaGithub,
   FaLinkedin,
-  FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
 
@@ -20,20 +19,21 @@ const UserProfile = () => {
       <div className="ml-6">
         <h2 className="text-2xl font-bold text-gray-800">Le Minh Quang</h2>
         <p className="mt-1 text-gray-600">
-          I amafinal-year Software Engineering student aiming to become a Senior
-          Software Engineer within the next 5 years. I ameager to enhance my
-          technical skills, contribute to impactful projects, and grow through
-          continuous learning and mentoring opportunities.
+          I am a Software Engineering aiming to become a Senior Software
+          Engineer within the next 5 years. I am eager to enhance my technical
+          skills, contribute to impactful projects, and grow through continuous
+          learning and mentoring opportunities.
         </p>
         <div className="mt-3 flex justify-between space-x-4 text-gray-600">
           <div className="flex space-x-4">
             <div>Contact me:</div>
-            {/* <a href="#" className=" hover:text-blue-500">
-              <FaFacebook size={20} />
+            <a
+              href="https://github.com/Quindart"
+              className=" hover:text-gray-800"
+            >
+              <FaGithub size={20} />
             </a>
-            <a href="#" className=" hover:text-pink-500">
-              <FaInstagram size={20} />
-            </a> */}
+
             <a
               target="blank"
               href="https://www.linkedin.com/in/minh-quang-le-76410730a/"

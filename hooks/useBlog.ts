@@ -36,6 +36,7 @@ interface Post {
 
 interface BlogHook {
     blogs: Post[];
+    recentblogs: Post[];
     blog: Post | null;
     loading: boolean;
     error: string | null;
@@ -88,6 +89,8 @@ function useBlog(): BlogHook {
 
     return {
         blogs,
+        recentblogs: blogs.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+            .slice(0, 2),
         blog,
         loading,
         error,

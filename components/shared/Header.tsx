@@ -7,8 +7,8 @@ import { useRouter, usePathname } from "next/navigation";
 
 const APP_HEADER = [
   {
-    name: "Bài viết",
-    key: "home",
+    name: "Blog",
+    key: "blog",
     url: "/",
   },
   {
@@ -17,36 +17,28 @@ const APP_HEADER = [
     url: "/resume",
   },
   {
-    name: "Dự án",
+    name: "Project",
     key: "culture",
     url: "/project",
+  },
+  {
+    name: "Community",
+    key: "community",
+    url: "/community",
   },
 ];
 
 function Header() {
-  const [isScroll, setScroll] = useState(false);
   const router = useRouter();
-  const pathname = usePathname(); // Lấy current path đáng tin cậy hơn
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY > 100);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const pathname = usePathname(); 
 
   return (
     <header
       className={clsx(
-        "bg-white border-b-[0.5px] z-10 transition-all duration-300 ease-in-out",
-        {
-          "fixed inset-x-0 top-0 shadow-md": isScroll,
-          "sticky top-0": !isScroll,
-        },
+        "bg-white border-b-[0.5px] sticky top-0 z-[10000] transition-all duration-300 ease-in-out",
       )}
     >
-      <div className="container mx-auto flex h-24 max-w-[1200px] items-center justify-between gap-10 px-4 sm:px-8 lg:px-32">
+      <div className="container mx-auto flex h-24  items-center justify-between gap-10 px-4 sm:px-8 lg:px-32">
         <a href="/" className="text-2xl font-[900] text-main-blog">
           Quindart
           <span className="ml-1 text-4xl text-red-500">.</span>
