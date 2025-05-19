@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import AllBlogsHome from "@/components/containers/home/allBlogs/index";
-import SectionHomePage from "@/components/containers/home/section/index";
+import AllBlogsHome from "@/components/containers/home/AllBlogsHome";
+import SectionHomePage from "@/components/containers/home/SectionHomePage";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import useBlog from "@/hooks/useBlog";
 import { useEffect } from "react";
