@@ -11,7 +11,7 @@ import {
 export default function CommunityPage() {
   return (
     <div
-      className="relative flex min-h-screen flex-col items-center py-10"
+      className="relative flex min-h-screen w-full flex-col items-center py-8 sm:py-10"
       style={{
         backgroundImage: "url(/assets/community/sunny.webp)",
         backgroundSize: "cover",
@@ -23,15 +23,15 @@ export default function CommunityPage() {
       <div className="absolute inset-0 bg-slate-600 opacity-50"></div>
 
       {/* Main Content with Overlay */}
-      <div className="relative z-10 w-full max-w-6xl px-4">
+      <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <header className="mb-12 text-center text-white">
-          <h1 className="flex animate-bounce items-center justify-center gap-3 text-4xl font-bold">
-            <UsersIcon className="size-10" /> Sunny Community
+        <header className="mb-10 text-center text-white">
+          <h1 className="flex animate-bounce items-center justify-center gap-2 text-2xl font-bold sm:text-3xl lg:text-4xl">
+            <UsersIcon className="size-8 sm:size-10" /> Sunny Community
           </h1>
           <p
-            className="mx-auto mt-6 max-w-2xl text-center text-xl text-slate-100"
-            style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
+            className="mx-auto mt-4 max-w-xl text-base text-slate-100 sm:text-lg lg:text-xl"
+            style={{ textShadow: "1px 1px 3px rgba(0, 0, 0, 0.5)" }}
           >
             Let explore, learn, and grow together in a passionate and creative
             community
@@ -39,14 +39,14 @@ export default function CommunityPage() {
         </header>
 
         {/* Main Content */}
-        <main className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <main className="grid grid-cols-1 gap-6 sm:gap-8">
           {/* Introduction Section */}
-          <section className="rounded-lg bg-white bg-opacity-90 p-6 shadow-lg">
-            <h2 className="flex items-center gap-2 text-3xl font-semibold text-slate-700">
-              <GlobeAltIcon className="animate-spin-slow size-8 text-slate-500" />
+          <section className="rounded-lg bg-white/90 p-5 shadow-lg sm:p-6">
+            <h2 className="flex items-center gap-2 text-xl font-semibold text-slate-700 sm:text-2xl lg:text-3xl">
+              <GlobeAltIcon className="spin-slow size-6 text-slate-500 sm:size-8" />
               About the Community
             </h2>
-            <p className="mt-4 leading-relaxed text-gray-700">
+            <p className="mt-3 text-sm leading-relaxed text-gray-700 sm:text-base">
               The Sunny Community brings together 36 passionate developers
               specializing in software engineering, blog management systems,
               ChatGPT, and a freelance team. We are proud to have members from
@@ -62,34 +62,34 @@ export default function CommunityPage() {
               height={1000}
               alt="community-quindart-blog"
               src="/assets/community/community.webp"
-              className="size-full object-cover"
+              className="h-auto w-full object-cover"
             />
           </section>
 
           {/* Fields of Work Section */}
-          <section className="col-span-1 rounded-lg bg-white bg-opacity-90 p-6 shadow-lg md:col-span-2">
-            <h2 className="flex items-center gap-2 text-3xl font-semibold text-slate-700">
-              <CodeBracketIcon className="size-8 animate-pulse text-slate-500" />
+          <section className="rounded-lg bg-white/90 p-5 shadow-lg sm:p-6">
+            <h2 className="flex items-center gap-2 text-xl font-semibold text-slate-700 sm:text-2xl lg:text-3xl">
+              <CodeBracketIcon className="size-6 animate-pulse text-slate-500 sm:size-8" />
               Areas of Activity
             </h2>
-            <ul className="mt-4 space-y-3 text-gray-700">
+            <ul className="mt-3 space-y-2 text-sm text-gray-700 sm:text-base">
               <li className="flex items-center gap-2">
-                <CodeBracketIcon className="size-6 text-slate-500" />
+                <CodeBracketIcon className="size-5 text-slate-500 sm:size-6" />
                 <strong>Software Engineering:</strong> Developing high-quality
                 software.
               </li>
               <li className="flex items-center gap-2">
-                <GlobeAltIcon className="size-6 text-slate-500" />
+                <GlobeAltIcon className="size-5 text-slate-500 sm:size-6" />
                 <strong>Blog Management Systems:</strong> Building and
                 optimizing blog platforms.
               </li>
               <li className="flex items-center gap-2">
-                <ChatBubbleLeftIcon className="size-6 text-slate-500" />
+                <ChatBubbleLeftIcon className="size-5 text-slate-500 sm:size-6" />
                 <strong>ChatGPT:</strong> Applying AI to develop intelligent
                 chatbots.
               </li>
               <li className="flex items-center gap-2">
-                <UsersIcon className="size-6 text-slate-500" />
+                <UsersIcon className="size-5 text-slate-500 sm:size-6" />
                 <strong>Freelance Team:</strong> Supporting flexible and
                 creative freelance projects.
               </li>
@@ -98,19 +98,17 @@ export default function CommunityPage() {
         </main>
 
         {/* Call to Action */}
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <Button
             href="https://discord.gg/rfNQujbZ"
             target="_blank"
             style={{ backgroundColor: "#5865F2", borderColor: "#5865F2" }}
-            className="mx-auto flex h-14 items-center gap-2 text-lg transition-transform duration-300 hover:scale-105"
+            className="mx-auto flex h-12 items-center gap-2 text-base transition-transform duration-300 hover:scale-105 sm:h-14 sm:text-lg"
           >
-            <ChatBubbleLeftIcon className="mr-2 size-5" /> Join Now!
+            <ChatBubbleLeftIcon className="mr-2 size-4 sm:size-5" /> Join Now!
           </Button>
         </div>
       </div>
-
-      {/* Custom Tailwind Animation */}
       <style jsx global>{`
         @keyframes spin-slow {
           0% {
@@ -120,7 +118,7 @@ export default function CommunityPage() {
             transform: rotate(360deg);
           }
         }
-        .animate-spin-slow {
+        .spin-slow {
           animation: spin-slow 5s linear infinite;
         }
       `}</style>
