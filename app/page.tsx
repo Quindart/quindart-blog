@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import AllBlogs from "@/components/pages/home/AllBlogs";
-import RecentBlogHome from "@/components/pages/home/Section";
+import AllBlogs from "@/components/containers/home/AllBlogs";
+import RecentBlogHome from "@/components/containers/home/Section";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import useBlog from "@/hooks/useBlog";
 import { useEffect } from "react";
@@ -14,7 +14,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <main className="mx-32 mb-10 min-h-screen max-2xl:w-[1200px]">
+      <div className="mx-auto min-h-screen max-2xl:mb-10 2xl:max-w-screen-xl">
         {loading ? (
           <div className="fixed inset-x-0">
             <LoadingSpinner />
@@ -25,7 +25,7 @@ export default function Home() {
             <AllBlogs blogs={blogs} />
           </>
         )}
-      </main>
+      </div>
     </>
   );
 }

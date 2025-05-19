@@ -5,7 +5,7 @@ import Image from "next/image";
 export function CardMe() {
   return (
     <Card className="max-w-sm shadow-none">
-      <div className="flex justify-end px-4 pt-4">
+      <div className="flex justify-end xl:px-4 xl:pt-4">
         <Dropdown inline label="">
           <Dropdown.Item>
             <a
@@ -31,7 +31,7 @@ export function CardMe() {
         <span className="text-sm text-gray-500 dark:text-gray-400">
           Software Developer
         </span>
-        <div className="mt-4 flex space-x-3 lg:mt-6">
+        <div className="mt-4 flex flex-wrap space-x-3 lg:mt-6">
           <a
             href="/resume"
             className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"

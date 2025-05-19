@@ -21,9 +21,9 @@ function CardSectionHome({
   slug: string;
 }) {
   return (
-    <div className="mb-6 mt-4 max-w-md rounded-lg border border-gray-100 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+    <div className="mb-6 mt-4 rounded-lg border border-gray-100 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
       <a href={`/blog/${slug}`}>
-        <h5 className="text-md mb-2 font-bold tracking-tight text-main-blog dark:text-white">
+        <h5 className=" mb-2 font-bold tracking-tight text-main-blog dark:text-white">
           {title}
         </h5>
       </a>

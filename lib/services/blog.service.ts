@@ -2,7 +2,6 @@ import { Post } from '../prisma/generated';
 import { prisma } from '../prisma/prisma';
 
 export class BlogService {
-    // Tạo bài viết mới kèm SEO (nếu có)
     async createPost(data: {
         title: string;
         slug: string;
@@ -131,7 +130,6 @@ export class BlogService {
         });
     }
 
-    // Xóa bài viết
     async deletePost(id: number): Promise<Post> {
         return prisma.post.delete({
             where: { id },

@@ -1,6 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "next/navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
 import useBlog from "@/hooks/useBlog";
@@ -10,7 +10,7 @@ import LoadingSpinner from "@/components/ui/LoadingSpinner";
 export default function BlogDetail() {
   const params = useParams<{ slug: string }>();
   const { slug } = params;
-  const { blog, loading, error, fetchBlogBySlug } = useBlog();
+  const { blog, loading, fetchBlogBySlug } = useBlog();
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -28,11 +28,11 @@ export default function BlogDetail() {
   return (
     <div className="relative h-full min-h-full">
       <motion.div
-        className="fixed left-0 top-0 z-[99999] h-1 bg-blue-700"
+        className="fixed left-0 top-0  z-[99999] h-1 bg-blue-700"
         style={{
           scaleX,
           transformOrigin: "0%",
-          width: "100%",
+          width: "100vw",
         }}
       />
 
@@ -49,10 +49,10 @@ export default function BlogDetail() {
             }
             title={`${blog?.title}`}
           />
-          <section className="mx-auto w-[1280px]">
-            <div id="blog__content" className="mt-20">
+          <div className="mx-auto w-full">
+            <div id="blog__content" className="mt-10 xl:mt-20">
               <div
-                className="prose prose-lg max-w-none"
+                className="prose prose-lg"
                 dangerouslySetInnerHTML={{ __html: `${blog?.content}` }}
               />
               {blog?.seo && (
@@ -76,7 +76,7 @@ export default function BlogDetail() {
                 </div>
               )}
             </div>
-          </section>
+          </div>
         </div>
       )}
     </div>

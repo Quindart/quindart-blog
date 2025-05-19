@@ -4,11 +4,12 @@ import CardSectionHome from "@/components/ui/CardSectionHome";
 
 function SectionHomePage({ blogs }: any) {
   return (
-    <div className="mt-4 flex gap-10 ">
-      <div className="relative h-[550px] w-[1000px]">
-        <div className="absolute bottom-0 left-10 z-10 mb-10 ">
-          <h1 className="mb-4 w-[500px] text-2xl font-[800] text-gray-200">
-            I&#39;m Le Minh Quang, a Software Engineer, and I&#39;m glad you stopped by!
+    <div className="flex flex-wrap gap-10 lg:mx-2 lg:mt-4">
+      <div className="relative h-[300px] w-full lg:h-[500px] lg:w-[calc(60%-20px)]  xl:w-[calc(70%-20px)]">
+        <div className="absolute bottom-0 z-10 mb-4 px-4 lg:mb-10 lg:px-10 ">
+          <h1 className="mb-4 text-lg text-gray-200 lg:w-[500px] lg:text-2xl lg:font-[800]">
+            I&#39;m Le Minh Quang, a Software Engineer, and I&#39;m glad you
+            stopped by!
           </h1>
           <a
             target="blank"
@@ -35,7 +36,7 @@ function SectionHomePage({ blogs }: any) {
         </div>
         <div>
           <Image
-            className="absolute h-auto cursor-pointer rounded-lg opacity-80 shadow-lg  transition-all duration-300 hover:grayscale-0"
+            className="absolute h-full cursor-pointer object-cover opacity-80 shadow-lg transition-all  duration-300 hover:grayscale-0 lg:rounded-lg"
             src="/assets/images/main-home.jpg"
             width={1000}
             height={500}
@@ -43,8 +44,10 @@ function SectionHomePage({ blogs }: any) {
           />
         </div>
       </div>
-      <div className="relative h-auto ">
-        <h1 className="mb-6 text-2xl font-bold text-main-blog">Recent blogs</h1>
+      <div className="relative h-auto w-full lg:w-[calc(40%-20px)]  xl:w-[calc(30%-20px)]">
+        <h1 className="mb-6 ml-4 text-2xl font-bold text-main-blog lg:ml-0">
+          Recent blogs
+        </h1>
         {blogs.map((blog: any, key: number) => (
           <CardSectionHome
             title={blog.title}

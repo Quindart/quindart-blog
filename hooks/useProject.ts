@@ -1,49 +1,7 @@
 import { Project } from '@/lib/prisma/generated';
+import { ProjectInput, UpdateProjectInput, UseProject } from '@/types/Project';
 import { useState, useCallback } from 'react';
 
-interface ProjectInput {
-    title: string;
-    slug: string;
-    description: string;
-    images?: string[];
-    links?: string[];
-    authorId: number;
-    categoryId?: number;
-    seo?: {
-        metaTitle: string;
-        metaDescription: string;
-        keywords: string[];
-        canonicalUrl?: string;
-    };
-}
-
-interface UpdateProjectInput {
-    id: number;
-    title?: string;
-    slug?: string;
-    description?: string;
-    images?: string[];
-    links?: string[];
-    categoryId?: number;
-    seo?: {
-        metaTitle?: string;
-        metaDescription?: string;
-        keywords?: string[];
-        canonicalUrl?: string;
-    };
-}
-
-interface UseProject {
-    projects: Project[] | null;
-    project: Project | null;
-    loading: boolean;
-    error: string | null;
-    fetchProjects: () => Promise<void>;
-    fetchProjectBySlug: (slug: string) => Promise<void>;
-    createProject: (data: ProjectInput) => Promise<Project | null>;
-    updateProject: (data: UpdateProjectInput) => Promise<Project | null>;
-    deleteProject: (id: number) => Promise<Project | null>;
-}
 
 export const useProject = (): UseProject => {
     const [projects, setProjects] = useState<Project[] | null>(null);
@@ -57,7 +15,6 @@ export const useProject = (): UseProject => {
         setError(null);
         try {
             const response = await fetch('/api/projects');
-            console.log("💲💲💲 ~ fetchProjects ~ response:", response)
             if (!response.ok) {
                 throw new Error('Lỗi khi lấy danh sách dự án');
             }
@@ -88,7 +45,6 @@ export const useProject = (): UseProject => {
         }
     }, []);
 
-    // Tạo dự án mới
     const createProject = useCallback(async (data: ProjectInput): Promise<Project | null> => {
         setLoading(true);
         setError(null);

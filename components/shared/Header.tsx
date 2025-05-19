@@ -1,7 +1,6 @@
 "use client";
-
 import clsx from "clsx";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SearchInput from "../ui/SearchInput";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -30,13 +29,13 @@ const APP_HEADER = [
 
 function Header() {
   const router = useRouter();
-  const pathname = usePathname(); 
+  const pathname = usePathname();
 
   return (
     <header
-      className={clsx(
-        "bg-white border-b-[0.5px] sticky top-0 z-[10000] transition-all duration-300 ease-in-out",
-      )}
+      className={
+        "sticky top-0 z-[10000] hidden border-b-[0.5px] bg-white transition-all duration-300 ease-in-out sm:block"
+      }
     >
       <div className="container mx-auto flex h-24  items-center justify-between gap-10 px-4 sm:px-8 lg:px-32">
         <a href="/" className="text-2xl font-[900] text-main-blog">
