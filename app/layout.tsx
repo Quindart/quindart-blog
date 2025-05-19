@@ -4,6 +4,7 @@ import { ThemeModeScript } from "flowbite-react";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import MainBottomNavigation from "@/components/shared/MainBottomNavigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,10 +25,11 @@ export default function RootLayout({
       <head>
         <ThemeModeScript />
       </head>
-      <body className={`${inter.className} h-full min-h-screen`}>
+      <body className={`${inter.className} mb-10 h-full min-h-screen`}>
         <Header />
         {children}
         <Footer />
+        <MainBottomNavigation />
       </body>
     </html>
   );

@@ -3,29 +3,7 @@ import clsx from "clsx";
 import React from "react";
 import SearchInput from "../ui/SearchInput";
 import { useRouter, usePathname } from "next/navigation";
-
-const APP_HEADER = [
-  {
-    name: "Blog",
-    key: "blog",
-    url: "/",
-  },
-  {
-    name: "Resume",
-    key: "lifestyle",
-    url: "/resume",
-  },
-  {
-    name: "Project",
-    key: "culture",
-    url: "/project",
-  },
-  {
-    name: "Community",
-    key: "community",
-    url: "/community",
-  },
-];
+import { APP_NAVIGATION } from "@/constants/ui";
 
 function Header() {
   const router = useRouter();
@@ -43,7 +21,7 @@ function Header() {
           <span className="ml-1 text-4xl text-red-500">.</span>
         </a>
         <nav className="flex gap-10">
-          {APP_HEADER.map((item) => (
+          {APP_NAVIGATION.map((item: any) => (
             <button
               key={item.key}
               onClick={() => router.push(item.url)}
