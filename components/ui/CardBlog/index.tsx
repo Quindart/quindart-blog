@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+
 type CardBlogProps = {
   img: string;
   title: string;
@@ -32,4 +33,4 @@ function CardBlog({ img, title, desc, slug }: CardBlogProps) {
   );
 }
 
-export default CardBlog;
+export default React.memo(CardBlog);

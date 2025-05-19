@@ -60,4 +60,4 @@ function CardSectionHome({
   );
 }
 
-export default CardSectionHome;
+export default React.memo(CardSectionHome);

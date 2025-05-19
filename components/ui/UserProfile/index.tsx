@@ -1,22 +1,18 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import Image from "next/image";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const UserProfile = () => {
   return (
-    <div className="bg-primary-50 max-w mx-auto flex items-center rounded-lg  border-slate-100 p-6">
+    <div className="bg-primary-50 mx-auto mt-10 flex items-center rounded-lg border-slate-100  lg:mt-0 lg:p-6">
       <Image
         src="/assets/images/avt.webp"
         alt="Katen Doe"
         width={200}
         height={200}
-        className="size-24 rounded-full border-2 border-white object-cover shadow-sm"
+        className="hidden size-24 rounded-full border-2 border-white object-cover shadow-sm lg:block"
       />
-      <div className="ml-6">
+      <div className="lg:ml-6">
         <h2 className="text-2xl font-bold text-gray-800">Le Minh Quang</h2>
         <p className="mt-1 text-gray-600">
           I am a Software Engineering aiming to become a Senior Software
@@ -24,7 +20,7 @@ const UserProfile = () => {
           skills, contribute to impactful projects, and grow through continuous
           learning and mentoring opportunities.
         </p>
-        <div className="mt-3 flex justify-between space-x-4 text-gray-600">
+        <div className="mb-10 mt-3 flex flex-wrap-reverse justify-center text-gray-600 lg:mb-0 lg:justify-between lg:space-x-4">
           <div className="flex space-x-4">
             <div>Contact me:</div>
             <a
@@ -52,10 +48,11 @@ const UserProfile = () => {
               <FaYoutube size={20} />
             </a>
           </div>
-          <div>
+
+          <div className=" mb-2 flex w-full lg:mt-0 lg:w-auto">
             <a
               href="/pdf/LeMinhQuang_FullStackDeveloper_CV.pdf"
-              className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              className="inline-flex w-full items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
               target="blank"
             >
               Download resume
