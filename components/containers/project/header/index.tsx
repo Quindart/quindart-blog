@@ -4,7 +4,7 @@ import React from "react";
 function HeaderProject({ filter, setFilter }: any) {
   return (
     <header
-      className="py-12 text-center"
+      className="px-4 py-12 text-center lg:px-0"
       style={{
         backgroundImage: "url(/assets/images/background.webp)",
         backgroundSize: "cover",
@@ -18,13 +18,13 @@ function HeaderProject({ filter, setFilter }: any) {
       >
         Projects
       </h1>
-      <div className="mt-4 flex justify-center">
+      <div className="mt-4 flex w-full justify-center">
         <TextInput
           type="text"
           placeholder="You can search project by name here"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="w-1/3"
+          className="w-full lg:w-1/3"
         />
       </div>
     </header>
