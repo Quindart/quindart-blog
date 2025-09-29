@@ -15,14 +15,16 @@ const UserProfile = () => {
       <div className="lg:ml-6">
         <h2 className="text-2xl font-bold text-gray-800">Le Minh Quang</h2>
         <p className="mt-1 text-gray-600">
-          I am a Software Engineering aiming to become a Senior Software
-          Engineer within the next 5 years. I am eager to enhance my technical
-          skills, contribute to impactful projects, and grow through continuous
-          learning and mentoring opportunities.
+          I am a Frontend Software Engineer with nearly 2 years of experience in
+          building scalable and user-friendly web and mobile applications. I aim
+          to become a Senior Software Engineer within the next 5 years. I am
+          eager to enhance my technical expertise, contribute to impactful
+          projects, and grow through continuous learning, collaboration, and
+          mentoring opportunities.
         </p>
         <div className="mb-10 mt-3 flex flex-wrap-reverse justify-center text-gray-600 lg:mb-0 lg:justify-between lg:space-x-4">
           <div className="flex space-x-4">
-            <div>Contact me:</div>
+            <div>Contact me: +84 364835692 </div>
             <a
               href="https://github.com/Quindart"
               className=" hover:text-gray-800"

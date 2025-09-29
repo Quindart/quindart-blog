@@ -17,6 +17,36 @@ export const EDUCATION_ITEMS = [
 
 export const EXPERIENCE_ITEMS = [
   {
+    title: "Frontend Engineer @ AIAIVN Company (May 2025 - Now)",
+    details: [
+      "International Marathon Project – Hanoi Techcombank",
+      "Frontend Team Leader: managed Git workflows, created tasks, and reviewed team members’ code.",
+      "Developed a GPS-based web application to help users track their real-time location.",
+      "Displayed cultural heritage markers and historical landmarks across Hanoi city.",
+      "Guided users to explore race checkpoints and marathon routes via Google Maps integration.",
+      "Researched and applied the Kalman Filter algorithm to reduce GPS noise and improve accuracy.",
+      "Implemented multilingual audio narration and an AI-powered chatbot for image generation and itinerary explanation.",
+      "Built internal developer tools to visualize and configure geofence radius for audio trigger points on the map.",
+      "War Remnants Museum Project – Ho Chi Minh City",
+      "Developed a React Native mobile application (iOS & Android) for indoor navigation and smart tour guidance tailored for international visitors.",
+      "Researched and integrated iBeacon IoT technology, applying a strongest-signal algorithm to reduce Bluetooth interference.",
+      "Implemented Bluetooth scanning & signal processing to enable indoor positioning and object detection.",
+      "Automated multilingual audio playback for historical sites, war remnants, and Vietnamese heritage stories.",
+      "POC Taxi Project – Heristep Japan (Tokyo)",
+      "Developed a GPS-driven POC web platform for smart taxi navigation in Tokyo.",
+      "Automated location-based audio playback to introduce Tokyo’s tourist attractions and cultural spots as taxis passed through key areas.",
+    ],
+  },
+  {
+    title: "Frontend Freelancer @ Sweden Country (Apri 2025 - Sept 2025)",
+    details: [
+      "Developed the E-Commerce Coupon Platform website with a user interface featuring coupons from major platforms like Amazon and eBay, and published blogs on shopping, tips, and finance.",
+      "Optimized website and improved client-side efficiency for the E-Commerce Coupon Platform.",
+      "Designed an admin dashboard for managing marketing coupons and system operations.",
+      "Deployed and configured cloud VPS using Digital Ocean, set up domain and Nginx proxy, and built CI/CD pipelines with Jenkins and Docker."
+    ],
+  },
+  {
     title:
       "Software Internship NodeJS & AngularJs @ AEGONA Company (Jan 2025 – April 2025)",
     details: [
@@ -27,11 +57,12 @@ export const EXPERIENCE_ITEMS = [
     ],
   },
   {
-    title: "Admin & Developer IUH School Graduation Website (Aug 2024 - Now)",
+    title:
+      "Admin & Developer IUH School Graduation Website (Aug 2024 - Jun 2025)",
     details: [
       "Developed a thesis management system for the Software Engineering major.",
       "Managed theses, dissertations, and scientific research for over 300 Software Engineering students.",
-      "Supported more than 20 lecturers in supervising thesis groups.",
+      "Supported more than 1000+ users in supervising thesis groups.",
       "Built the application using React Query and Node.js (Express).",
       "Implemented modules for group management, document management, student tracking, task/timeline management, and role-based access control.",
     ],
@@ -62,15 +93,15 @@ export const SKILLS = [
   },
   {
     icon: GlobeAltIcon,
-    text: "React/Redux, AngularJs, React Query, Zustand",
+    text: "NextJS, ReactJS, React Native, AngularJs, React Query, Zustand, Swift/basic",
   },
   {
     icon: ServerStackIcon,
-    text: "MongoDB, MySQL, Redis",
+    text: "MongoDB, MySQL, GraphQL, Redis, Neo4J",
   },
   {
     icon: CpuChipIcon,
-    text: "GraphQL, RESTful API",
+    text: "Java, Javascript/Typescript, Swift",
   },
   {
     icon: CommandLineIcon,
@@ -78,6 +109,6 @@ export const SKILLS = [
   },
   {
     icon: CheckBadgeIcon,
-    text: "SCSS/SASS, TailwindCSS, MUI, Flowbit ",
+    text: "SCSS/SASS, TailwindCSS, MUI, Flowbit, Bootstrap5, Ant design, Framer motion",
   },
 ];
