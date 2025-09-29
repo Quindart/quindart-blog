@@ -1,11 +1,7 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "hooks": {
-    "build": "npx prisma generate"
+  "version": 2,
+  "builds": [{ "src": "package.json", "use": "@vercel/next" }],
+  "env": {
+    "DATABASE_URL": "@database-url"
   }
 }
