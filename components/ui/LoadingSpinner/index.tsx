@@ -58,7 +58,6 @@ export default function LoadingSpinner() {
           transition={{ delay: 0.6 }}
         />
       </motion.div>
-
       {/* Loading Text */}
       <motion.p
         className="mt-4 text-lg font-semibold text-slate-600"

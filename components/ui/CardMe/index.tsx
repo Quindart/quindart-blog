@@ -21,8 +21,9 @@ export function CardMe() {
         <Image
           alt="Bonnie image"
           height="96"
-          src={'/assets/images/avt.webp'}
+          src={"/assets/images/avt.webp"}
           width="96"
+          priority
           className="mb-3 rounded-full"
         />
         <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">

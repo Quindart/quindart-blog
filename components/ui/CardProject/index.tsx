@@ -1,8 +1,7 @@
 "use client";
 import { Tooltip } from "flowbite-react";
-import { FaEye, FaGithub, FaGlobe, FaShareAlt } from "react-icons/fa";
+import { FaEye, FaGithub, FaGlobe, FaHeart, FaShareAlt } from "react-icons/fa";
 import Image from "next/image";
-import { FaHeart } from "react-icons/fa";
 import React from "react";
 
 function CardProject({
@@ -25,9 +24,10 @@ function CardProject({
       <Image
         src={images[0]}
         alt={title}
-        width={300}
-        height={200}
-        className="mb-4 w-full rounded-md object-cover"
+        width={1200}
+        height={1200}
+        priority
+        className="mb-4 h-72 w-full rounded-md object-cover"
       />
       <div>
         <h2 className="text-xl font-semibold text-slate-800">{title}</h2>

@@ -12,6 +12,7 @@ function HeaderBlogDetail({ bgUrl, title }: PropsType) {
           src={`${bgUrl}`}
           width={1280}
           height={300}
+          priority
           className="h-80 w-full object-cover opacity-45"
           alt="bg-blog-quindart"
         />

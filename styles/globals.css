@@ -65,30 +65,3 @@
     @apply bg-background text-foreground;
   }
 }
-/* Toàn bộ thanh cuộn */
-::-webkit-scrollbar {
-  width: 6px; /* Độ rộng của scrollbar */
-  height: 4px; /* Chiều cao của scrollbar ngang */
-}
-
-/* Phần track (nền của scrollbar) */
-::-webkit-scrollbar-track {
-  background: #eeeded; /* Màu nền thanh cuộn */
-  border-radius: 4px; /* Bo tròn góc */
-}
-
-/* Phần thumb (tay cầm của scrollbar) */
-::-webkit-scrollbar-thumb {
-  background: #5c5c5c; /* Màu của tay cầm */
-  border-radius: 4px; /* Bo tròn góc */
-  border: 1px solid #525151FF; /* Tạo khoảng cách giữa thumb và track */
-}
-
-/* Khi hover vào tay cầm */
-::-webkit-scrollbar-thumb:hover {
-  background: #6d6d6d; /* Màu tối hơn khi hover */
-}
-
-pre{
-  overflow-x: auto;
-}

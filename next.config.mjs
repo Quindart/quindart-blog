@@ -8,7 +8,6 @@ const nextConfig = {
       },
     ],
   },
-  // outputFileTracing: false, // Tắt output file tracing
 };
 
 export default nextConfig;

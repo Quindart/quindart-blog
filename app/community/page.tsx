@@ -60,6 +60,7 @@ export default function CommunityPage() {
             <Image
               width={1000}
               height={1000}
+              priority
               alt="community-quindart-blog"
               src="/assets/community/community.webp"
               className="h-auto w-full object-cover"

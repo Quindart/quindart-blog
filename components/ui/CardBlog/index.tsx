@@ -19,6 +19,7 @@ function CardBlog({ img, title, desc, slug }: CardBlogProps) {
         src={`${img}`}
         width={200}
         height={200}
+        priority
         alt="card-quindart-blog"
       />
       <div className="flex flex-col justify-between p-4 leading-normal">

@@ -7,9 +7,10 @@ const UserProfile = () => {
     <div className="bg-primary-50 mx-auto mt-10 flex items-center rounded-lg border-slate-100  lg:mt-0 lg:p-6">
       <Image
         src="/assets/images/avt.webp"
-        alt="Katen Doe"
+        alt="le-minh-quang"
         width={200}
         height={200}
+        priority
         className="hidden size-24 rounded-full border-2 border-white object-cover shadow-sm lg:block"
       />
       <div className="lg:ml-6">
@@ -53,7 +54,7 @@ const UserProfile = () => {
 
           <div className=" mb-2 flex w-full lg:mt-0 lg:w-auto">
             <a
-              href="/pdf/LeMinhQuang_FullStackDeveloper_CV.pdf"
+              href="/pdf/LeMinhQuang_FrontendEngineer_CV.pdf"
               className="inline-flex w-full items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
               target="blank"
             >

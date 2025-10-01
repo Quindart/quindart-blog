@@ -39,6 +39,7 @@ function SectionHomePage({ blogs }: any) {
             className="absolute h-full cursor-pointer object-cover opacity-80 shadow-lg transition-all  duration-300 hover:grayscale-0 lg:rounded-lg"
             src="/assets/images/main-home.jpg"
             width={1000}
+            priority
             height={500}
             alt="quindart-main-home"
           />

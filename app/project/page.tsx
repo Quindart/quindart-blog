@@ -11,7 +11,6 @@ export default function ProjectPage() {
   useEffect(() => {
     fetchProjects();
   }, [fetchProjects]);
-
   const filtered = useMemo(
     () =>
       projects?.filter((p) =>
@@ -19,17 +18,13 @@ export default function ProjectPage() {
       ),
     [projects, filter],
   );
-
+  if (loading) return <LoadingSpinner />;
   return (
     <div className="h-full min-h-screen">
-      {!loading ? (
-        <>
-          <HeaderProject filter={filter} setFilter={setFilter} />
-          <ListProject filtered={filtered} />
-        </>
-      ) : (
-        <LoadingSpinner />
-      )}
+      <>
+        <HeaderProject filter={filter} setFilter={setFilter} />
+        <ListProject filtered={filtered} />
+      </>
     </div>
   );
 }

@@ -6,9 +6,8 @@ import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import useBlog from "@/hooks/useBlog";
 import { useEffect } from "react";
 
-export default function Home() {
-  const { blogs, loading, error, recentblogs, fetchBlogs } = useBlog();
-
+export default function Page() {
+  const { blogs, loading, recentblogs, fetchBlogs } = useBlog();
   useEffect(() => {
     fetchBlogs();
   }, []);
