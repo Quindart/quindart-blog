@@ -21,12 +21,8 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
   }
 
   return (
-    <div className="min-h-screen flex bg-gray-50">
-      <Sidebar />
-      <div className="flex-1 flex flex-col">
-        <AdminHeader />
-        <main className="p-6">{children}</main>
-      </div>
+    <div className="min-h-screen max-w-screen-xl flex bg-gray-50">
+        <div className="p-6 w-full">{children}</div>
     </div>
   );
 }
