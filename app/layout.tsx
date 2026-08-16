@@ -7,6 +7,7 @@ import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import MainBottomNavigation from "@/components/shared/MainBottomNavigation";
 const inter = Inter({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
   title: "Quindart portfolio",
   description:
