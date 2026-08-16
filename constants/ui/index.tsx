@@ -5,11 +5,6 @@ export const APP_NAVIGATION = [
     url: "/",
   },
   {
-    name: "Resume",
-    key: "lifestyle",
-    url: "/resume",
-  },
-  {
     name: "Project",
     key: "culture",
     url: "/project",
