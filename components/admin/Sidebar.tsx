@@ -26,6 +26,7 @@ export default function Sidebar({ collapsed = false, open = false, onToggleColla
           <Link href="/admin/dashboard/users" className="px-3 py-2 rounded hover:bg-gray-100">{!collapsed ? 'Users' : 'U'}</Link>
           <Link href="/admin/dashboard/posts" className="px-3 py-2 rounded hover:bg-gray-100">{!collapsed ? 'Posts' : 'P'}</Link>
           <Link href="/admin/dashboard/projects" className="px-3 py-2 rounded hover:bg-gray-100">{!collapsed ? 'Projects' : 'R'}</Link>
+          <Link href="/admin/landing-pages" className="px-3 py-2 rounded hover:bg-gray-100">{!collapsed ? 'Landing Pages' : 'L'}</Link>
           <button onClick={handleLogout} className="text-left px-3 py-2 rounded hover:bg-gray-100">{!collapsed ? 'Sign out' : 'S'}</button>
         </nav>
       </aside>
@@ -43,6 +44,7 @@ export default function Sidebar({ collapsed = false, open = false, onToggleColla
             <Link href="/admin/dashboard/users" className="px-3 py-2 rounded hover:bg-gray-100">Users</Link>
             <Link href="/admin/dashboard/posts" className="px-3 py-2 rounded hover:bg-gray-100">Posts</Link>
             <Link href="/admin/dashboard/projects" className="px-3 py-2 rounded hover:bg-gray-100">Projects</Link>
+            <Link href="/admin/landing-pages" className="px-3 py-2 rounded hover:bg-gray-100">Landing Pages</Link>
             <button onClick={handleLogout} className="text-left px-3 py-2 rounded hover:bg-gray-100">Sign out</button>
           </nav>
         </aside>
