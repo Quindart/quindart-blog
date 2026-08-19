@@ -65,14 +65,35 @@ model Project {
 
 model SEO {
   id             Int      @id @default(autoincrement())
-  metaTitle      String   
-  metaDescription String   
-  keywords       String[] 
-  canonicalUrl   String?  
+  metaTitle      String
+  metaDescription String
+  keywords       String[]
+  canonicalUrl   String?
   post           Post?    @relation(fields: [postId], references: [id])
   postId         Int?     @unique
   project        Project? @relation(fields: [projectId], references: [id])
   projectId      Int?     @unique
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+}
+
+model LandingPage {
+  id           Int      @id @default(autoincrement())
+  slug         String   @unique  // subdomain name
+  html         String   // raw HTML content
+  images       String[] // Cloudinary URLs
+  status       String   @default("draft")  // "draft" | "published" | "archived"
+
+  // SEO metadata
+  metaTitle    String
+  metaDescription String
+  keywords     String[]
+  canonicalUrl String?
+
+  // Lighthouse validation
+  lighthouseScore Int?   // 0-100, null if not checked
+  lighthouseReport Json? // full audit report
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }

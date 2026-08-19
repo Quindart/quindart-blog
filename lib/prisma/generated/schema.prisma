@@ -76,3 +76,24 @@ model SEO {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
+
+model LandingPage {
+  id     Int      @id @default(autoincrement())
+  slug   String   @unique // subdomain name
+  html   String // raw HTML content
+  images String[] // Cloudinary URLs
+  status String   @default("draft") // "draft" | "published" | "archived"
+
+  // SEO metadata
+  metaTitle       String
+  metaDescription String
+  keywords        String[]
+  canonicalUrl    String?
+
+  // Lighthouse validation
+  lighthouseScore  Int? // 0-100, null if not checked
+  lighthouseReport Json? // full audit report
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
