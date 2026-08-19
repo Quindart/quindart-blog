@@ -8,6 +8,7 @@ const nextConfig = {
       },
     ],
   },
+  serverComponentsExternalPackages: ['sanitize-html', 'htmlparser2', 'chrome-launcher', 'lighthouse'],
 };
 
 export default nextConfig;

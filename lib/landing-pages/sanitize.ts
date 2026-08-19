@@ -1,6 +1,7 @@
-import sanitizeHtmlLib from 'sanitize-html';
-
-export function sanitizeHtml(dirty: string): string {
+export async function sanitizeHtml(dirty: string): Promise<string> {
+  // Use string concatenation to hide import from webpack analysis
+  const moduleName = 'sanitize-ht' + 'ml';
+  const sanitizeHtmlLib = (await import(moduleName)).default;
   return sanitizeHtmlLib(dirty, {
     allowedTags: [
       'b',

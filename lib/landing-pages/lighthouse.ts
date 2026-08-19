@@ -1,14 +1,16 @@
 import * as http from 'http';
 
-const lighthouse = require('lighthouse');
-const chromeLauncher = require('chrome-launcher');
-
 export interface LighthouseResult {
   score: number;
   report: any;
 }
 
 export async function runLighthouseAudit(html: string): Promise<LighthouseResult> {
+  // Use string concatenation to hide imports from webpack analysis
+  const lighthouseName = 'light' + 'house';
+  const chromeName = 'chrome-' + 'launcher';
+  const lighthouse = (await import(lighthouseName)).default;
+  const chromeLauncher = (await import(chromeName)).default;
   // Create a temporary HTTP server to serve the HTML
   const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/html' });

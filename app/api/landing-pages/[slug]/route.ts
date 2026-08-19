@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/prisma';
-import { sanitizeHtml } from '@/lib/landing-pages/sanitize';
 
 function escapeHtml(text: string): string {
   const map: { [key: string]: string } = {
@@ -31,7 +30,8 @@ export async function GET(
     }
 
     // Sanitize HTML content
-    const sanitizedContent = sanitizeHtml(landingPage.html);
+    const { sanitizeHtml } = await import('@/lib/landing-pages/sanitize');
+    const sanitizedContent = await sanitizeHtml(landingPage.html);
 
     // Build keywords string
     const keywordsStr = (landingPage.keywords || []).join(', ');
