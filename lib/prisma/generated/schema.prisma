@@ -76,3 +76,18 @@ model SEO {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
+
+model LandingPage {
+  id              Int      @id @default(autoincrement())
+  slug            String   @unique
+  html            String
+  images          String[] @default([])
+  metaTitle       String
+  metaDescription String
+  keywords        String[] @default([])
+  canonicalUrl    String?
+  status          String   @default("draft")
+  lighthouseScore Int?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
