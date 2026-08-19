@@ -17,3 +17,7 @@ export function requireAuth() {
     throw new Error('Unauthorized');
   }
 }
+
+export function auth() {
+  return requireAuth();
+}
