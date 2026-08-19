@@ -10,11 +10,9 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "build": "prisma generate && next build",
-    "postinstall": "prisma generate",
-    "quality-gate": "tsx scripts/quality-gate.ts",
-    "quality-gate:lint": "tsx scripts/quality-gate.ts --skip=test --skip=coverage --skip=bundle --skip=pr",
-    "quality-gate:quick": "tsx scripts/quality-gate.ts --skip=bundle",
-    "quality-gate:full": "tsx scripts/quality-gate.ts"
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "test:watch": "NODE_OPTIONS='--experimental-vm-modules' jest --watch",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts",
@@ -36,11 +34,13 @@
     "next": "14.1.3",
     "react": "^18.3.1",
     "react-dom": "^18",
+    "sanitize-html": "^2.17.7",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.0",
+    "@types/jest": "^30.0.0",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20",
     "@types/react": "^18.3.21",
@@ -50,11 +50,13 @@
     "eslint-config-next": "14.1.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-tailwindcss": "^3.15.1",
+    "jest": "^30.4.2",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "prisma": "^6.7.0",
     "tailwindcss": "^3.4.1",
+    "ts-jest": "^29.4.12",
     "tsx": "^4.19.3",
     "typescript": "^5"
   }
