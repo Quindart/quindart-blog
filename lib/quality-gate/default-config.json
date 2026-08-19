@@ -1,0 +1,13 @@
+{
+  "required": ["lint", "typecheck"],
+  "optional": ["test", "coverage", "bundle", "pr"],
+  "thresholds": {
+    "coverage": 80,
+    "eslintWarnings": "error"
+  },
+  "pr": {
+    "createDraft": false,
+    "addLabels": [],
+    "requestReviewers": []
+  }
+}

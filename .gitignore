@@ -36,3 +36,6 @@ yarn-error.log*
 next-env.d.ts
 
 .todo
+
+# quality-gate config
+.claude/quality-gate-config.json
