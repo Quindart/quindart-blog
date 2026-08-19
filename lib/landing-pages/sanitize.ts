@@ -56,7 +56,7 @@ export function sanitizeHtml(dirty: string): string {
       article: ['class', 'id'],
     },
     allowedSchemes: ['https', 'http', 'mailto'],
-    onTagAttr: (tag, name, value) => {
+    onTagAttr: (tag: string, name: string, value: string) => {
       // Validate img src for Cloudinary URLs only
       if (tag === 'img' && name === 'src') {
         if (!value.startsWith('https://res.cloudinary.com/')) {

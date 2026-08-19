@@ -1,5 +1,6 @@
 import { POST } from '@/app/api/landing-pages/publish/route';
 import { db } from '@/lib/prisma';
+import { NextRequest } from 'next/server';
 
 jest.mock('@/lib/auth', () => ({
   requireAuth: jest.fn(() => ({ userId: 1 })),
@@ -31,7 +32,7 @@ describe('POST /api/landing-pages/publish', () => {
       body: JSON.stringify({ id: landingPageId }),
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     expect(response.status).toBe(200);
 
     const json = await response.json();
@@ -58,7 +59,7 @@ describe('POST /api/landing-pages/publish', () => {
       body: JSON.stringify({ id: nocheckPage.id }),
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     expect(response.status).toBe(400);
   });
 
@@ -81,7 +82,7 @@ describe('POST /api/landing-pages/publish', () => {
       body: JSON.stringify({ id: badPage.id }),
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     expect(response.status).toBe(400);
   });
 
@@ -91,7 +92,7 @@ describe('POST /api/landing-pages/publish', () => {
       body: JSON.stringify({ id: 99999 }),
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     expect(response.status).toBe(404);
   });
 });

@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { LandingPageForm } from '@/components/admin/LandingPageForm';
-import { LighthouseModal } from '@/components/admin/LighthouseModal';
+import LandingPageForm from '@/components/admin/LandingPageForm';
+import LighthouseModal from '@/components/admin/LighthouseModal';
 import { Button } from '@/components/ui/button';
 
 export default function EditLandingPagePage() {

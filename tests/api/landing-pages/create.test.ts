@@ -1,5 +1,6 @@
 import { POST } from '@/app/api/landing-pages/create/route';
 import { db } from '@/lib/prisma';
+import { NextRequest } from 'next/server';
 
 jest.mock('@/lib/auth', () => ({
   requireAuth: jest.fn(() => ({ userId: 1 })),
@@ -27,7 +28,7 @@ describe('POST /api/landing-pages/create', () => {
       },
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     const json = await response.json();
 
     expect(response.status).toBe(201);
@@ -54,7 +55,7 @@ describe('POST /api/landing-pages/create', () => {
       },
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     expect(response.status).toBe(400);
   });
 
@@ -75,7 +76,7 @@ describe('POST /api/landing-pages/create', () => {
       },
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     expect(response.status).toBe(400);
   });
 
@@ -108,7 +109,7 @@ describe('POST /api/landing-pages/create', () => {
       },
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     expect(response.status).toBe(409);
   });
 });

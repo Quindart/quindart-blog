@@ -1,5 +1,6 @@
 import { POST } from '@/app/api/landing-pages/check-lighthouse/route';
 import { db } from '@/lib/prisma';
+import { NextRequest } from 'next/server';
 
 jest.mock('@/lib/auth', () => ({
   requireAuth: jest.fn(() => ({ userId: 1 })),
@@ -49,7 +50,7 @@ describe('POST /api/landing-pages/check-lighthouse', () => {
       },
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     expect(response.status).toBe(200);
 
     const json = await response.json();
@@ -68,7 +69,7 @@ describe('POST /api/landing-pages/check-lighthouse', () => {
       },
     });
 
-    const response = await POST(req);
+    const response = await POST(req as NextRequest);
     expect(response.status).toBe(404);
   });
 
@@ -81,7 +82,7 @@ describe('POST /api/landing-pages/check-lighthouse', () => {
       },
     });
 
-    await POST(req);
+    await POST(req as NextRequest);
 
     const updated = await db.landingPage.findUnique({
       where: { id: landingPageId },

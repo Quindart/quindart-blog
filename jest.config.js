@@ -5,6 +5,18 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
   },
+  extensionsToTreatAsEsm: ['.ts'],
+  transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        useESM: true,
+        tsconfig: {
+          esModuleInterop: true,
+        },
+      },
+    ],
+  },
   collectCoverageFrom: [
     'lib/**/*.ts',
     'app/api/**/*.ts',

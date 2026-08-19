@@ -1,5 +1,6 @@
 import { GET } from '@/app/api/landing-pages/[slug]/route';
 import { db } from '@/lib/prisma';
+import { NextRequest } from 'next/server';
 
 describe('GET /api/landing-pages/[slug]', () => {
   beforeEach(async () => {
@@ -29,7 +30,7 @@ describe('GET /api/landing-pages/[slug]', () => {
       method: 'GET',
     });
 
-    const response = await GET(req, { params: { slug: slug } });
+    const response = await GET(req as NextRequest, { params: { slug: slug } });
     expect(response.status).toBe(200);
 
     const html = await response.text();
@@ -44,7 +45,7 @@ describe('GET /api/landing-pages/[slug]', () => {
       method: 'GET',
     });
 
-    const response = await GET(req, { params: { slug: 'nonexistent' } });
+    const response = await GET(req as NextRequest, { params: { slug: 'nonexistent' } });
     expect(response.status).toBe(404);
   });
 
@@ -66,7 +67,7 @@ describe('GET /api/landing-pages/[slug]', () => {
       method: 'GET',
     });
 
-    const response = await GET(req, { params: { slug: slug } });
+    const response = await GET(req as NextRequest, { params: { slug: slug } });
     expect(response.status).toBe(404);
   });
 
@@ -88,7 +89,7 @@ describe('GET /api/landing-pages/[slug]', () => {
       method: 'GET',
     });
 
-    const response = await GET(req, { params: { slug: slug } });
+    const response = await GET(req as NextRequest, { params: { slug: slug } });
     const html = await response.text();
     expect(html).not.toContain('<script>');
     expect(html).toContain('<h1>Test</h1>');

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { LandingPageForm } from '@/components/admin/LandingPageForm';
+import LandingPageForm from '@/components/admin/LandingPageForm';
 
 export default function CreateLandingPagePage() {
   const router = useRouter();
