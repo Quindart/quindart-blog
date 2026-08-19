@@ -10,7 +10,11 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "build": "prisma generate && next build",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "quality-gate": "tsx scripts/quality-gate.ts",
+    "quality-gate:lint": "tsx scripts/quality-gate.ts --skip=test --skip=coverage --skip=bundle --skip=pr",
+    "quality-gate:quick": "tsx scripts/quality-gate.ts --skip=bundle",
+    "quality-gate:full": "tsx scripts/quality-gate.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts",
