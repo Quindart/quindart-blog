@@ -43,7 +43,7 @@ export const EXPERIENCE_ITEMS = [
       "Developed the E-Commerce Coupon Platform website with a user interface featuring coupons from major platforms like Amazon and eBay, and published blogs on shopping, tips, and finance.",
       "Optimized website and improved client-side efficiency for the E-Commerce Coupon Platform.",
       "Designed an admin dashboard for managing marketing coupons and system operations.",
-      "Deployed and configured cloud VPS using Digital Ocean, set up domain and Nginx proxy, and built CI/CD pipelines with Jenkins and Docker."
+      "Deployed and configured cloud VPS using Digital Ocean, set up domain and Nginx proxy, and built CI/CD pipelines with Jenkins and Docker.",
     ],
   },
   {

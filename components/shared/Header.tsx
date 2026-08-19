@@ -10,7 +10,7 @@ function Header() {
   const pathname = usePathname();
 
   // Hide global header on admin routes to avoid duplicate headers
-  if (pathname?.startsWith('/admin')) return null;
+  if (pathname?.startsWith("/admin")) return null;
 
   return (
     <header

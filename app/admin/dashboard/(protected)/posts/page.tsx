@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 export default function PostsAdminPage() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -7,7 +7,7 @@ export default function PostsAdminPage() {
 
   useEffect(() => {
     async function load() {
-      const res = await fetch('/api/blogs', { credentials: 'same-origin' });
+      const res = await fetch("/api/blogs", { credentials: "same-origin" });
       const data = await res.json();
       setPosts(data || []);
       setLoading(false);
@@ -23,7 +23,9 @@ export default function PostsAdminPage() {
       ) : (
         <ul className="space-y-2">
           {posts.map((p) => (
-            <li key={p.id} className="p-3 bg-white rounded shadow-sm">{p.title}</li>
+            <li key={p.id} className="p-3 bg-white rounded shadow-sm">
+              {p.title}
+            </li>
           ))}
         </ul>
       )}

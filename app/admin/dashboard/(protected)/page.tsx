@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import AdminCard from '@/components/admin/Card';
+import AdminCard from "@/components/admin/Card";
 
 export default function DashBoard() {
   const [users, setUsers] = useState<number | null>(null);
@@ -10,11 +10,15 @@ export default function DashBoard() {
   useEffect(() => {
     async function load() {
       const [uRes, pRes, prRes] = await Promise.all([
-        fetch('/api/users', { credentials: 'same-origin' }),
-        fetch('/api/blogs', { credentials: 'same-origin' }),
-        fetch('/api/projects', { credentials: 'same-origin' }),
+        fetch("/api/users", { credentials: "same-origin" }),
+        fetch("/api/blogs", { credentials: "same-origin" }),
+        fetch("/api/projects", { credentials: "same-origin" }),
       ]);
-      const [uData, pData, prData] = await Promise.all([uRes.json(), pRes.json(), prRes.json()]);
+      const [uData, pData, prData] = await Promise.all([
+        uRes.json(),
+        pRes.json(),
+        prRes.json(),
+      ]);
       setUsers(Array.isArray(uData) ? uData.length : 0);
       setPosts(Array.isArray(pData) ? pData.length : 0);
       setProjects(Array.isArray(prData) ? prData.length : 0);

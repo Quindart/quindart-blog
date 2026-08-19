@@ -1,24 +1,25 @@
-import fs from 'fs';
-import path from 'path';
-import { SkillResult, SkillOptions } from '../types';
+import fs from "fs";
+import path from "path";
+import { SkillResult, SkillOptions } from "../types";
 
 export async function run(options: SkillOptions): Promise<SkillResult> {
   if (options.ignoreVite) {
     return {
       success: true,
-      message: 'Bundle analysis skipped (--ignore-vite)',
+      message: "Bundle analysis skipped (--ignore-vite)",
       details: {},
     };
   }
 
   // Check if Vite is configured
   const hasViteConfig =
-    fs.existsSync(path.resolve('vite.config.ts')) || fs.existsSync(path.resolve('vite.config.js'));
+    fs.existsSync(path.resolve("vite.config.ts")) ||
+    fs.existsSync(path.resolve("vite.config.js"));
 
   if (!hasViteConfig) {
     return {
       success: true,
-      message: 'Vite not configured. Bundle analysis unavailable.',
+      message: "Vite not configured. Bundle analysis unavailable.",
       details: { viteConfigFound: false },
     };
   }
@@ -27,7 +28,7 @@ export async function run(options: SkillOptions): Promise<SkillResult> {
   // For now, return placeholder
   return {
     success: true,
-    message: 'Bundle analysis: TODO (requires vite-plugin-visualizer setup)',
+    message: "Bundle analysis: TODO (requires vite-plugin-visualizer setup)",
     details: { viteConfigFound: true },
   };
 }

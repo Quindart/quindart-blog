@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 export default function ProjectsAdminPage() {
   const [items, setItems] = useState<any[]>([]);
@@ -7,7 +7,7 @@ export default function ProjectsAdminPage() {
 
   useEffect(() => {
     async function load() {
-      const res = await fetch('/api/projects', { credentials: 'same-origin' });
+      const res = await fetch("/api/projects", { credentials: "same-origin" });
       const data = await res.json();
       setItems(data || []);
       setLoading(false);
@@ -23,7 +23,9 @@ export default function ProjectsAdminPage() {
       ) : (
         <ul className="space-y-2">
           {items.map((p) => (
-            <li key={p.id} className="p-3 bg-white rounded shadow-sm">{p.title}</li>
+            <li key={p.id} className="p-3 bg-white rounded shadow-sm">
+              {p.title}
+            </li>
           ))}
         </ul>
       )}

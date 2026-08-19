@@ -1,14 +1,16 @@
-import { execSync } from 'child_process';
-import { SkillResult, SkillOptions } from '../types';
+import { execSync } from "child_process";
+import { SkillResult, SkillOptions } from "../types";
 
-export async function run(options: SkillOptions & { threshold?: number }): Promise<SkillResult> {
+export async function run(
+  options: SkillOptions & { threshold?: number },
+): Promise<SkillResult> {
   const threshold = options.threshold || 80;
-  const fileFlag = options.file ? `${options.file}` : '';
-  const grepFlag = options.grep ? `-g "${options.grep}"` : '';
+  const fileFlag = options.file ? `${options.file}` : "";
+  const grepFlag = options.grep ? `-g "${options.grep}"` : "";
 
   try {
     const cmd = `rtk playwright test ${fileFlag} ${grepFlag}`.trim();
-    execSync(cmd, { stdio: 'inherit' });
+    execSync(cmd, { stdio: "inherit" });
 
     // Parse coverage from test output (simplified; real implementation would parse detailed report)
     const coverage = 85; // Placeholder
@@ -29,7 +31,7 @@ export async function run(options: SkillOptions & { threshold?: number }): Promi
   } catch (error) {
     return {
       success: !options.force,
-      message: 'Tests failed. Run with --force to continue.',
+      message: "Tests failed. Run with --force to continue.",
       details: { error: String(error) },
     };
   }

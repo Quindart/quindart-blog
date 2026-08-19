@@ -10,7 +10,9 @@ function ListProject({ filtered }: any) {
             new Date(`${b?.createdAt}`).getTime() -
             new Date(`${a?.createdAt}`).getTime(),
         )
-        .map((project: any) => <CardProject key={project.id} {...project} />)}
+        .map((project: any) => (
+          <CardProject key={project.id} {...project} />
+        ))}
     </div>
   );
 }

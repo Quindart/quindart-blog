@@ -1,9 +1,9 @@
-import { Config, SkillModule, SkillResult } from './types';
-import * as lintCheck from './commands/lint-check';
-import * as typecheck from './commands/typecheck';
-import * as testAndCoverage from './commands/test-and-coverage';
-import * as bundleAnalyze from './commands/bundle-analyze';
-import * as createPr from './commands/create-pr';
+import { Config, SkillModule, SkillResult } from "./types";
+import * as lintCheck from "./commands/lint-check";
+import * as typecheck from "./commands/typecheck";
+import * as testAndCoverage from "./commands/test-and-coverage";
+import * as bundleAnalyze from "./commands/bundle-analyze";
+import * as createPr from "./commands/create-pr";
 
 const SKILLS: Record<string, SkillModule> = {
   lint: lintCheck,
@@ -29,7 +29,7 @@ export interface OrchestratorResult {
 
 export async function orchestrate(
   config: Config,
-  options: OrchestratorOptions = {}
+  options: OrchestratorOptions = {},
 ): Promise<OrchestratorResult> {
   const results: OrchestratorResult = {
     passed: [],

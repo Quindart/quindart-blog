@@ -3,7 +3,7 @@ export interface Config {
   optional: string[];
   thresholds: {
     coverage: number;
-    eslintWarnings: 'error' | 'warn';
+    eslintWarnings: "error" | "warn";
   };
   pr: {
     createDraft: boolean;
@@ -29,4 +29,5 @@ export interface SkillModule {
   run: (options: SkillOptions) => Promise<SkillResult>;
 }
 
-export type SkillName = 'lint' | 'typecheck' | 'test' | 'coverage' | 'bundle' | 'pr';
+export type SkillName =
+  "lint" | "typecheck" | "test" | "coverage" | "bundle" | "pr";
