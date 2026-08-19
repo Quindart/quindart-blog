@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { requireAuth } from '@/lib/auth';
 import { db } from '@/lib/prisma';
 
-const DOMAIN = 'quindart.com';
+const DOMAIN = 'quindart-blog.vercel.app';
 
 export async function POST(request: NextRequest) {
   try {
@@ -60,7 +60,8 @@ export async function POST(request: NextRequest) {
         id: updated.id,
         status: 'published',
         lighthouseScore: updated.lighthouseScore,
-        subdomain: `${updated.slug}.${DOMAIN}`,
+        url: `/landing-pages/${updated.slug}`,
+        publicUrl: `https://${DOMAIN}/landing-pages/${updated.slug}`,
       },
       { status: 200 }
     );

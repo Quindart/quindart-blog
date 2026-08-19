@@ -71,7 +71,7 @@ export default function EditLandingPagePage() {
 
       const data = await response.json();
       setLandingPage({ ...landingPage, status: 'published' });
-      alert(`✓ Published at ${data.subdomain}`);
+      alert(`✓ Published!\n\n${data.publicUrl}`);
       router.push('/admin/landing-pages');
     } catch (err: any) {
       alert(`Error: ${err.message}`);
