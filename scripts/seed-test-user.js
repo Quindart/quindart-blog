@@ -13,7 +13,6 @@ async function seed() {
     update: { name: 'Test Admin', password: hash },
     create: { name: 'Test Admin', email, password: hash },
   });
-
   console.log('Seeded test user:', email);
   process.exit(0);
 }
