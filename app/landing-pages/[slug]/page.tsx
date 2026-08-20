@@ -44,7 +44,7 @@ export default async function LandingPageView({ params }: LandingPageProps) {
 
   if (!landingPage) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen bg-white">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
           <p className="text-gray-600">This landing page does not exist or has not been published yet.</p>
@@ -54,13 +54,9 @@ export default async function LandingPageView({ params }: LandingPageProps) {
   }
 
   return (
-    <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-12">
-        <div
-          className="prose prose-lg max-w-none dark:prose-invert"
-          dangerouslySetInnerHTML={{ __html: landingPage.html }}
-        />
-      </div>
-    </div>
+    <div
+      className="w-full min-h-screen"
+      dangerouslySetInnerHTML={{ __html: landingPage.html }}
+    />
   );
 }
