@@ -1,4 +1,4 @@
-import { db } from '@/lib/prisma';
+import { landingPageService } from '@/lib/services/landing-page.service';
 import { Metadata } from 'next';
 
 interface LandingPageProps {
@@ -6,9 +6,7 @@ interface LandingPageProps {
 }
 
 async function getLandingPage(slug: string) {
-  const landingPage = await db.landingPage.findUnique({
-    where: { slug },
-  });
+  const landingPage = await landingPageService.getLandingPageBySlug(slug);
 
   if (!landingPage || landingPage.status !== 'published') {
     return null;
@@ -17,7 +15,9 @@ async function getLandingPage(slug: string) {
   return landingPage;
 }
 
-export async function generateMetadata({ params }: LandingPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: LandingPageProps): Promise<Metadata> {
   const landingPage = await getLandingPage(params.slug);
 
   if (!landingPage) {
@@ -39,7 +39,9 @@ export async function generateMetadata({ params }: LandingPageProps): Promise<Me
   };
 }
 
-export default async function LandingPageView({ params }: LandingPageProps) {
+export default async function LandingPageView({
+  params,
+}: LandingPageProps) {
   const landingPage = await getLandingPage(params.slug);
 
   if (!landingPage) {
@@ -47,7 +49,9 @@ export default async function LandingPageView({ params }: LandingPageProps) {
       <div className="flex items-center justify-center min-h-screen bg-white">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
-          <p className="text-gray-600">This landing page does not exist or has not been published yet.</p>
+          <p className="text-gray-600">
+            This landing page does not exist or has not been published yet.
+          </p>
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAuth } from '@/lib/auth';
-import { db } from '@/lib/prisma';
+import { landingPageService } from '@/lib/services/landing-page.service';
 import {
   validateSlug,
   validateHtml,
@@ -59,9 +59,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check slug uniqueness
-    const existingPage = await db.landingPage.findUnique({
-      where: { slug },
-    });
+    const existingPage = await landingPageService.getLandingPageBySlug(slug);
 
     if (existingPage) {
       return NextResponse.json(
@@ -76,17 +74,15 @@ export async function POST(request: NextRequest) {
       .filter((k: string) => k.length > 0);
 
     // Create landing page
-    const landingPage = await db.landingPage.create({
-      data: {
-        slug,
-        html,
-        images: images || [],
-        status: 'draft',
-        metaTitle,
-        metaDescription,
-        keywords: sanitizedKeywords,
-        canonicalUrl: canonicalUrl || null,
-      },
+    const landingPage = await landingPageService.createLandingPage({
+      slug,
+      html,
+      images: images || [],
+      status: 'draft',
+      metaTitle,
+      metaDescription,
+      keywords: sanitizedKeywords,
+      canonicalUrl: canonicalUrl || null,
     });
 
     // Return created landing page

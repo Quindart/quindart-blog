@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAuth } from '@/lib/auth';
-import { db } from '@/lib/prisma';
+import { landingPageService } from '@/lib/services/landing-page.service';
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,9 +19,9 @@ export async function POST(request: NextRequest) {
     const { id } = body;
 
     // Fetch landing page
-    const landingPage = await db.landingPage.findUnique({
-      where: { id: parseInt(id) },
-    });
+    const landingPage = await landingPageService.getLandingPageById(
+      parseInt(id)
+    );
 
     // Return 404 if not found
     if (!landingPage) {
@@ -32,16 +32,15 @@ export async function POST(request: NextRequest) {
     }
 
     // Run Lighthouse audit (dynamic import to avoid ESM issues at build time)
-    const { runLighthouseAudit } = await import('@/lib/landing-pages/lighthouse');
+    const { runLighthouseAudit } = await import(
+      '@/lib/landing-pages/lighthouse'
+    );
     const { score, report } = await runLighthouseAudit(landingPage.html);
 
     // Update in DB
-    const updated = await db.landingPage.update({
-      where: { id: parseInt(id) },
-      data: {
-        lighthouseScore: score,
-        lighthouseReport: report,
-      },
+    const updated = await landingPageService.updateLandingPage(parseInt(id), {
+      lighthouseScore: score,
+      lighthouseReport: report,
     });
 
     // Return 200 with response

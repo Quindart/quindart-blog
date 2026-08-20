@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAuth } from '@/lib/auth';
-import { db } from '@/lib/prisma';
+import { landingPageService } from '@/lib/services/landing-page.service';
 
 const DOMAIN = 'quindart-blog.vercel.app';
 
@@ -21,9 +21,9 @@ export async function POST(request: NextRequest) {
     const { id } = body;
 
     // Fetch landing page
-    const landingPage = await db.landingPage.findUnique({
-      where: { id: parseInt(id) },
-    });
+    const landingPage = await landingPageService.getLandingPageById(
+      parseInt(id)
+    );
 
     // Return 404 if not found
     if (!landingPage) {
@@ -36,23 +36,27 @@ export async function POST(request: NextRequest) {
     // Check Lighthouse score
     if (landingPage.lighthouseScore === null) {
       return NextResponse.json(
-        { error: 'Lighthouse check not run. Please check Lighthouse score first.' },
+        {
+          error: 'Lighthouse check not run. Please check Lighthouse score first.',
+        },
         { status: 400 }
       );
     }
 
     if (landingPage.lighthouseScore < 90) {
       return NextResponse.json(
-        { error: `Lighthouse score is ${landingPage.lighthouseScore}. Must be 90 or higher to publish.` },
+        {
+          error: `Lighthouse score is ${landingPage.lighthouseScore}. Must be 90 or higher to publish.`,
+        },
         { status: 400 }
       );
     }
 
     // Update status to "published"
-    const updated = await db.landingPage.update({
-      where: { id: parseInt(id) },
-      data: { status: 'published' },
-    });
+    const updated = await landingPageService.updateLandingPage(
+      parseInt(id),
+      { status: 'published' }
+    );
 
     // Return 200 with response
     return NextResponse.json(
