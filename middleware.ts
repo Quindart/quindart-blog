@@ -37,9 +37,7 @@ export function middleware(request: NextRequest) {
     !pathname.startsWith('/api') &&
     !pathname.startsWith('/admin')
   ) {
-    // Rewrite to landing page API route
     const url = request.nextUrl.clone();
-    url.pathname = `/api/landing-pages/${subdomain}`;
     return NextResponse.rewrite(url);
   }
 
