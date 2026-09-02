@@ -6,6 +6,7 @@ import { ThemeModeScript } from "flowbite-react";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import MainBottomNavigation from "@/components/shared/MainBottomNavigation";
+import PostHogProvider from "@/components/providers/PostHogProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body className={`${inter.className} mb-10 h-full min-h-screen`}>
+        <PostHogProvider />
         <script
           dangerouslySetInnerHTML={{
             __html: `
