@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Quindart portfolio",
   description:
     "Liên hệ ngay để hợp tác phát triển sản phẩm công nghệ chất lượng",
+  icons: {
+    icon: "/assets/images/logo.png",
+  },
 };
 
 export default function RootLayout({
