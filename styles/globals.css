@@ -2,6 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (prefers-reduced-motion: no-preference) {
+  html:has([data-portfolio]) {
+    scroll-behavior: smooth;
+  }
+
+  @keyframes portfolio-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes portfolio-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(2deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(2.5deg);
+    }
+  }
+
+  @keyframes portfolio-text-slide {
+    from {
+      opacity: 0;
+      transform: translateY(115%) scale(0.98);
+      clip-path: inset(0 0 100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      clip-path: inset(0 0 0);
+    }
+  }
+
+  @keyframes portfolio-bubble {
+    0%,
+    100% {
+      opacity: 0.2;
+      transform: translate3d(0, 6px, 0) scale(0.85);
+    }
+    50% {
+      opacity: 0.65;
+      transform: translate3d(8px, -10px, 0) scale(1);
+    }
+  }
+
+  .portfolio-text-slide {
+    display: block;
+    animation: portfolio-text-slide 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .portfolio-text-slide-1 {
+    animation-delay: 0.08s;
+  }
+  .portfolio-text-slide-2 {
+    animation-delay: 0.18s;
+  }
+  .portfolio-text-slide-3 {
+    animation-delay: 0.28s;
+  }
+  .portfolio-text-slide-4 {
+    animation-delay: 0.38s;
+  }
+  .portfolio-bubble {
+    position: absolute;
+    z-index: 0;
+    border: 1px solid hsl(var(--primary));
+    border-radius: 999px;
+    pointer-events: none;
+    animation: portfolio-bubble 5s ease-in-out infinite;
+  }
+  .portfolio-bubble-one {
+    top: 12%;
+    right: 8%;
+    width: 13px;
+    height: 13px;
+  }
+  .portfolio-bubble-two {
+    top: 48%;
+    right: -2%;
+    width: 8px;
+    height: 8px;
+    animation-delay: 1.1s;
+  }
+  .portfolio-bubble-three {
+    bottom: 9%;
+    left: 4%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2.2s;
+  }
+
+  .portfolio-float {
+    animation: portfolio-float 7s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-float,
+  .portfolio-text-slide,
+  .portfolio-bubble {
+    animation: none;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
