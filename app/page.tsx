@@ -1,30 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-"use client";
-import AllBlogsHome from "@/components/containers/home/AllBlogsHome";
-import SectionHomePage from "@/components/containers/home/SectionHomePage";
-import LoadingSpinner from "@/components/ui/LoadingSpinner";
-import useBlog from "@/hooks/useBlog";
-import { useEffect } from "react";
+import type { Metadata } from "next";
+import Portfolio from "@/components/containers/home/portfolio/Portfolio";
+
+export const metadata: Metadata = {
+  title: "Quang — Software Engineer | Quindart",
+  description:
+    "Mình là Quang, một Software Engineer. Khám phá các dự án, cách mình làm sản phẩm và những ghi chép từ công việc.",
+};
 
 export default function Page() {
-  const { blogs, loading, recentblogs, fetchBlogs } = useBlog();
-  useEffect(() => {
-    fetchBlogs();
-  }, []);
-  return (
-    <>
-      <div className="mx-auto min-h-screen max-2xl:mb-10 2xl:max-w-screen-xl">
-        {loading ? (
-          <div className="fixed inset-x-0">
-            <LoadingSpinner />
-          </div>
-        ) : (
-          <>
-            <SectionHomePage blogs={recentblogs} />
-            <AllBlogsHome blogs={blogs} />
-          </>
-        )}
-      </div>
-    </>
-  );
+  return <Portfolio />;
 }
